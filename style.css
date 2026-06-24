@@ -332,67 +332,35 @@ nav a:hover, nav a.active {
 }
 
 
-/* ========================================================
-   ZONA DE CELULAR (La PC ignora por completo esto)
-   ======================================================== */
-@media (max-width: 768px) {
 
-    /* 1. Hace que la barra negra del menú se adapte al celular */
-    header {
-        display: flex;
-        flex-direction: column;   /* Pone el logo arriba, los enlaces en el medio e iconos abajo */
-        justify-content: center;
-        align-items: center;
-        gap: 12px;                /* Espacio ordenado entre cada bloque */
-        padding: 15px 10px;
-        width: 100%;
-    }
 
-    /* 2. Acomoda las categorías (Inicio, Tenis, Balones...) en el móvil */
-    nav {
-        display: flex;
-        flex-wrap: wrap;          /* Si no caben en una línea, bajan de forma ordenada */
-        justify-content: center;  /* Centra todos los enlaces */
-        gap: 10px;                /* Espacio pequeño entre cada palabra */
-        width: 100%;
-        margin: 0 auto;
-    }
 
-    /* 3. Evita que las palabras largas como T-SHIRTS se rompan feo */
-    nav a {
-        font-size: 12px;          /* Letra más pequeña ideal para pantallas de teléfono */
-        padding: 5px 8px;
-        white-space: nowrap;      /* Fuerza a que 'T-SHIRTS' se mantenga unido */
-    }
 
-    /* 4. Centra el carrito y el usuario abajo de los enlaces */
-    .header-icons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        width: 100%;
-    }
-
-    /* 5. DISEÑO DE LOS PRODUCTOS: Los tenis se ponen uno debajo del otro */
-    .contenedor-productos { 
-        display: grid;
-        grid-template-columns: 1fr; /* Una sola columna para que no se aplasten */
-        gap: 25px;                  /* Espacio de separación entre cada tenis */
-        padding: 15px;
-    }
-
-    /* Asegura que las tarjetas de los tenis ocupen bien el ancho del celular */
-    .tarjeta-producto {
-        width: 100%;
-        max-width: 340px;           /* Tamaño estándar para que se vea estético */
-        margin: 0 auto;             /* Las centra en la pantalla */
-    }
-
-    /* Evita que las imágenes de los tenis se distorsionen o se salgan */
-    .tarjeta-producto img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
+/* Menú de navegación central */
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;               /* Si no cabe en móviles, baja ordenadamente */
+  gap: 100px;                     /* Espacio entre cada enlace */
+  justify-content: center;
 }
-/* <--- ESA LLAVE DE ARRIBA ES EL CIERRE DEL MURO DE CONTENCIÓN. ¡NO LA BORRES! */
+
+.nav-menu a {
+  text-decoration: none;
+  color: #c7923e;                /* El color dorado de tus letras */
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Contenedor de Iconos (Carrito y Usuario) */
+.nav-icons {
+  display: flex;
+  gap: 15px;                     /* Espacio entre el carrito y el usuario */
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.icon-btn {
+  color: #000000;                /* Color de los iconos (puedes cambiarlo a blanco o dorado) */
+  font-size: 20px;               /* Tamaño de los iconos */
+  text-decoration: none;
+}
