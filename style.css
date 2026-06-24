@@ -330,3 +330,27 @@ nav a:hover, nav a.active {
     color: #ff4500;       /* Puedes ponerlo naranja para que combine con tus botones + */
     text-decoration: none; /* Doble seguridad para quitar cualquier subrayado */
 }
+
+
+nav {
+    display: flex;
+    flex-wrap: wrap;       /* Si los enlaces no caben, bajan ordenados */
+    justify-content: center; /* Centra los enlaces en la pantalla del celular */
+    gap: 10px;             /* Espacio pequeño entre cada sección */
+    padding: 10px 0;
+    width: 100%;
+}
+
+nav a {
+    font-size: 13px;       /* Achica un poco la letra para pantallas móviles */
+    padding: 4px 6px;      /* Espaciado interno de los clics */
+}
+
+.header-icons {
+    display: flex;
+    justify-content: center; /* Centra el carrito y el usuario abajo de los enlaces */
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;      /* Despega los iconos de las letras */
+}
+
