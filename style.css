@@ -1,0 +1,332 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN GENERAL Y TIPOGRAFÍA
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+html {
+    scroll-behavior: smooth; /* Hace que la pantalla se deslice suavemente al usar el menú */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    width: 100vw;       /* Fuerza a que el cuerpo mida exactamente el ancho de la pantalla */
+    overflow-x: hidden; /* Corta de raíz cualquier cosa que intente salirse hacia los lados */
+}
+
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN (HEADER) - LOGO PEGADO A INICIO
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 6%;
+    background-color: #1f2833;
+    border-bottom: 3px solid #ff4500;
+    
+    /* Forzamos a que el menú sea estático y se quede arriba en el tope */
+    position: relative !important; 
+    
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Truco de CSS para empujar los iconos del carrito al extremo derecho */
+}
+
+nav a {
+    color: #c5a059; /* Tono dorado/madera de cancha */
+    text-decoration: none;
+    margin: 0 16px;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff4500; /* Cambia a naranja al pasar el mouse */
+    transform: translateY(-2px);
+}
+
+/* Iconos de Carrito y Cuenta (Extremo Derecho) */
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons a {
+    color: #ffffff;
+    font-size: 22px;
+    margin-left: 25px;
+    transition: 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #ff4500;
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO (BANNER PRINCIPAL DE BIENVENIDA)
+   ========================================================================== */
+.hero {
+   height: 65vh; /* Le subimos un poco el alto para compensar */
+    width: 100%;
+    max-width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), 
+                url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px 0 20px; /* Añadimos 80px de espacio arriba para empujar el texto hacia abajo */
+    box-sizing: border-box;
+}
+
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 19px;
+    color: #45f3ff; /* Azul neón para contraste */
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn-primary {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.4);
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e03d00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 69, 0, 0.6);
+}
+
+/* ==========================================================================
+   4. SECCIONES DE PRODUCTOS Y REJILLA (GRID)
+   ========================================================================== */
+/* REEMPLAZA ESTA CLASE EN TU STYLE.CSS */
+.store-container {
+    max-width: 1200px;  /* Evita que el contenido se estire de más en pantallas gigantes */
+    margin: 0 auto;     /* ¡Esto es lo que centra todo el bloque de forma perfecta! */
+    padding: 40px 20px; /* Espaciado interno para que no pegue de los bordes */
+}
+.products-section {
+    padding: 50px 0;
+    border-bottom: 1px solid #1f2833; /* Línea sutil de separación entre categorías */
+}
+
+/* Títulos de apartados (Tenis, Balones, etc.) */
+.products-section h2 {
+    font-size: 28px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    border-left: 5px solid #ff4500; /* Barra decorativa naranja */
+    padding-left: 12px;
+    letter-spacing: 1px;
+}
+
+/* Sistema Grid dinámico para las tarjetas */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* ==========================================================================
+   5. TARJETAS DE PRODUCTO (CARDS)
+   ========================================================================== */
+.product-card {
+    background-color: #1f2833;
+    border-radius: 16px;
+    padding: 22px;
+    border: 1px solid #2d3748;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(255, 69, 0, 0.15);
+    border-color: #ff4500;
+}
+
+/* Cuadro contenedor de la foto/icono del producto */
+.product-img {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b0c10;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+/* Iconos provisionales */
+.dummy-icon {
+    font-size: 55px;
+    color: #45f3ff;
+    opacity: 0.8;
+}
+
+/* Información interna de la tarjeta */
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* Botón Añadir (+) */
+.add-to-cart {
+    background-color: transparent;
+    border: 2px solid #ff4500;
+    color: #ff4500;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #ff4500;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* BARRA DE NAVEGACIÓN GENERAL */
+header {
+    display: flex;
+    justify-content: space-between; /* Mantiene los iconos del carrito al extremo derecho */
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #bebebe;
+    border-bottom: 2px solid #ff4500;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Agrupamos el logo y la navegación para que se peguen */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 30px; /* Este espacio separa el logo del botón "Inicio" */
+}
+
+/* AQUÍ HACES EL LOGO UN POCO MÁS GRANDE */
+.logo-img {
+    height: 200px; /* Ajusta este número si lo quieres aún más grande */
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Quitamos los flex antiguos que movían el orden */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #c5a059;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #ff4500;
+}
+
+/* Los iconos se quedan flotando solos a la derecha */
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+/* 1. El contenedor del cuadro de la foto */
+.product-img {
+    background-color: #0b111e; /* Color oscuro de fondo para que resalte la foto */
+    border-radius: 8px;
+    height: 200px;             /* Altura fija ideal para que todas las tarjetas midan lo mismo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;          /* Evita que cualquier cosa se salga del cuadro */
+    padding: 15px;             /* Este espacio empuja la imagen hacia adentro para que quede más pequeña */
+    box-sizing: border-box;
+}
+
+/* 2. La imagen real del producto */
+.product-img img {
+    max-width: 100%;           /* Obliga a la foto a no salirse del ancho de su contenedor */
+    max-height: 100%;          /* Obliga a la foto a no salirse del alto de su contenedor */
+    object-fit: contain;       /* Truco pro: escala la foto perfectamente sin deformarla ni cortarla */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto opcional: un zoom suave a la foto cuando pasas el mouse por la tarjeta */
+.product-card:hover .product-img img {
+    transform: scale(1.05);
+}
+
+
+
+
+/* Esto le da estilo al número para que no se vea plano */
+#cart-count {
+    font-family: 'Poppins', sans-serif; /* Usa la misma fuente de tu tienda */
+    font-weight: bold;
+    font-size: 16px;
+    color: #ff4500;       /* Puedes ponerlo naranja para que combine con tus botones + */
+    text-decoration: none; /* Doble seguridad para quitar cualquier subrayado */
+}
